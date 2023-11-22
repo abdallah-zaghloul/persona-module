@@ -47,7 +47,7 @@ trait WebRegistrationService
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::USER_HOME;
 
 
     /**
@@ -96,7 +96,7 @@ trait WebRegistrationService
      */
     public function showRegistrationForm(): View|Application|ViewFactory|Foundation
     {
-        return view('persona::user-register');
+        return view('persona::user.register');
     }
 
 

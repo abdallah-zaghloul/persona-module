@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Contracts\Support\Renderable;
 
@@ -15,6 +15,6 @@ class HomeService
      */
     public function render(): Renderable
     {
-        return view('persona::home');
+        return view('persona::user.home');
     }
 }

@@ -34,7 +34,7 @@ trait WebResetPasswordService
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::USER_HOME;
 
 
     /**
@@ -45,7 +45,7 @@ trait WebResetPasswordService
     {
         $token = $request->route()->parameter('token');
 
-        return view('persona::user-password-reset')->with([
+        return view('persona::user.password-reset')->with([
             'token' => $token,
             'email' => $request->email
         ]);

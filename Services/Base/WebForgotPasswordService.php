@@ -32,6 +32,6 @@ trait WebForgotPasswordService
      */
     public function showLinkRequestForm(): View|Application|Factory|Foundation
     {
-        return view('persona::user-password-email');
+        return view('persona::user.password-email');
     }
 }

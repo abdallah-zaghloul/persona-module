@@ -1,18 +1,18 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Modules\Persona\Services\Base\WebConfirmPasswordService;
+use Modules\Persona\Services\Base\WebForgotPasswordService;
 
 /**
  *
  */
-class UserConfirmPasswordService
+class SendResetPasswordService
 {
-    use WebConfirmPasswordService;
+    use WebForgotPasswordService;
 
     /**
      * @param Request $request
@@ -20,6 +20,6 @@ class UserConfirmPasswordService
      */
     public function render(Request $request): JsonResponse|RedirectResponse
     {
-        return $this->confirm($request);
+        return $this->sendResetLinkEmail($request);
     }
 }

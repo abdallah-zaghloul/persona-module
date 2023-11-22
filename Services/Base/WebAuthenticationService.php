@@ -30,5 +30,5 @@ trait WebAuthenticationService
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::USER_HOME;
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -10,7 +10,7 @@ use Modules\Persona\Services\Base\WebResetPasswordService;
 /**
  *
  */
-class UserResetPasswordService
+class ResetPasswordService
 {
     use WebResetPasswordService;
 

@@ -1,17 +1,17 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Modules\Persona\Services\Base\WebVerificationService;
+use Modules\Persona\Services\Base\WebResetPasswordService;
 
 /**
  *
  */
-class UserShowEmailVerificationFormService
+class ResetPasswordFormService
 {
-    use WebVerificationService;
+    use WebResetPasswordService;
 
     /**
      * @param Request $request
@@ -19,6 +19,6 @@ class UserShowEmailVerificationFormService
      */
     public function render(Request $request): Renderable
     {
-        return $this->show($request);
+        return $this->showResetForm($request);
     }
 }

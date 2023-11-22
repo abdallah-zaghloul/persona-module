@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Persona\Services\Base\WebAuthenticationService;
@@ -8,7 +8,7 @@ use Modules\Persona\Services\Base\WebAuthenticationService;
 /**
  *
  */
-class UserShowLoginFormService
+class ShowLoginFormService
 {
     use WebAuthenticationService;
 
@@ -17,6 +17,6 @@ class UserShowLoginFormService
      */
     public function render(): Renderable
     {
-        return view('persona::user-login');
+        return view('persona::user.login');
     }
 }

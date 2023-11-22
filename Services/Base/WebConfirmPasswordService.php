@@ -33,7 +33,7 @@ trait WebConfirmPasswordService
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::USER_HOME;
 
 
     /**
@@ -41,6 +41,6 @@ trait WebConfirmPasswordService
      */
     public function showConfirmForm(): View|Application|Factory|Foundation
     {
-        return view('persona::user-password-confirm');
+        return view('persona::user.password-confirm');
     }
 }

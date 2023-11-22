@@ -21,7 +21,7 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::guard('web')->check())
-                return redirect(RouteServiceProvider::HOME);
+                return redirect(RouteServiceProvider::USER_HOME);
 
         return $next($request);
     }

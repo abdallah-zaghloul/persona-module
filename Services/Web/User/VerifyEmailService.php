@@ -1,7 +1,8 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -10,16 +11,17 @@ use Modules\Persona\Services\Base\WebVerificationService;
 /**
  *
  */
-class UserResendVerificationEmailService
+class VerifyEmailService
 {
     use WebVerificationService;
 
     /**
      * @param Request $request
      * @return JsonResponse|RedirectResponse
+     * @throws AuthorizationException
      */
     public function render(Request $request): JsonResponse|RedirectResponse
     {
-        return $this->resend($request);
+        return $this->verify($request);
     }
 }

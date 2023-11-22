@@ -1,27 +1,25 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Modules\Persona\Services\Base\WebVerificationService;
+use Modules\Persona\Services\Base\WebConfirmPasswordService;
 
 /**
  *
  */
-class UserVerifyEmailService
+class ConfirmPasswordService
 {
-    use WebVerificationService;
+    use WebConfirmPasswordService;
 
     /**
      * @param Request $request
      * @return JsonResponse|RedirectResponse
-     * @throws AuthorizationException
      */
     public function render(Request $request): JsonResponse|RedirectResponse
     {
-        return $this->verify($request);
+        return $this->confirm($request);
     }
 }

@@ -1,28 +1,26 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Validation\ValidationException;
 use Modules\Persona\Services\Base\WebAuthenticationService;
 
 /**
  *
  */
-class UserLoginService
+class LogoutService
 {
     use WebAuthenticationService;
 
     /**
      * @param Request $request
      * @return JsonResponse|RedirectResponse|Response
-     * @throws ValidationException
      */
     public function render(Request $request): JsonResponse|RedirectResponse|Response
     {
-        return $this->login($request);
+        return $this->logout($request);
     }
 }

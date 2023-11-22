@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Persona\Http\Controllers\Web;
+namespace Modules\Persona\Http\Controllers\Web\User;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Persona\Services\Web;
+namespace Modules\Persona\Services\Web\User;
 
 use Illuminate\Contracts\Support\Renderable;
 use Modules\Persona\Services\Base\WebConfirmPasswordService;
@@ -8,7 +8,7 @@ use Modules\Persona\Services\Base\WebConfirmPasswordService;
 /**
  *
  */
-class UserShowConfirmPasswordFormService
+class ShowConfirmPasswordFormService
 {
     use WebConfirmPasswordService;
 

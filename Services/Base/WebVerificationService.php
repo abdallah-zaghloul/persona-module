@@ -36,7 +36,7 @@ trait WebVerificationService
      *
      * @var string
      */
-    protected string $redirectTo = RouteServiceProvider::HOME;
+    protected string $redirectTo = RouteServiceProvider::USER_HOME;
 
 
     /**
@@ -47,7 +47,7 @@ trait WebVerificationService
     {
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
-            : view('persona::user-verify');
+            : view('persona::user.verify');
     }
 
 
