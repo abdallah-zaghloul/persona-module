@@ -15,6 +15,7 @@ class RedirectIfAuthenticated
 {
     public array $urls = [
         'web' => RouteServiceProvider::USER_HOME,
+        'adminWeb' => RouteServiceProvider::ADMIN_HOME,
     ];
 
 

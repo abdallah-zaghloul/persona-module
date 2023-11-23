@@ -9,6 +9,7 @@ use App\Http\Kernel;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Modules\Persona\Http\Middleware\EnsureEmailIsVerified;
 use Modules\Persona\Http\Middleware\RedirectIfAuthenticated;
+use Modules\Persona\Models\Admin;
 use Modules\Persona\Models\User;
 
 
@@ -61,6 +62,7 @@ class PersonaServiceProvider extends ServiceProvider
         config(['auth' => array_replace_recursive(
             config('auth'),
             $this->userAuthenticationConfigs(),
+            $this->adminAuthenticationConfigs()
         )]);
     }
 
@@ -82,6 +84,23 @@ class PersonaServiceProvider extends ServiceProvider
         ];
     }
 
+
+    /**
+     * @return \array[][]
+     */
+    public function adminAuthenticationConfigs(): array
+    {
+        return [
+            'providers'=> ['admins' => ['driver' => 'eloquent', 'model' => Admin::class]],
+            'guards'=> ['adminWeb' => ['driver' => 'session', 'provider' => 'admins']],
+            'passwords'=> ['admins' => [
+                'provider' => 'admins',
+                'table' => 'admin_password_reset_tokens',
+                'expire' => 60,
+                'throttle' => 60
+            ]],
+        ];
+    }
 
     /**
      * @return void
