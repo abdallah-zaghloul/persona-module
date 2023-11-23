@@ -77,6 +77,7 @@ class EnsureEmailIsVerified extends BaseEnsureEmailIsVerified
     {
         return collect([
             'web'=> ['env' => env('SHOULD_VERIFY_USER_EMAIL', false), 'route' => 'verification.notice'],
+            'adminWeb'=> ['env' => env('SHOULD_VERIFY_ADMIN_EMAIL', false), 'route' => 'adminWeb.verification.notice'],
         ]);
     }
 }

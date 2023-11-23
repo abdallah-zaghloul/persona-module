@@ -2,6 +2,8 @@
 
 namespace Modules\Persona\Providers;
 
+use Modules\Persona\Events\AdminRegistered;
+use Modules\Persona\Listeners\SendAdminEmailVerificationNotification;
 use Modules\Persona\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -24,6 +26,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot(): void
     {
         env('SHOULD_VERIFY_USER_EMAIL') and $this->listen[Registered::class][] = SendEmailVerificationNotification::class;
+        env('SHOULD_VERIFY_ADMIN_EMAIL') and $this->listen[AdminRegistered::class][] = SendAdminEmailVerificationNotification::class;
     }
 
     /**
